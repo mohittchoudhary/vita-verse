@@ -171,6 +171,21 @@ em { font-style: italic; }
   transition: all .4s var(--eo);
 }
 .nav-cta:hover { background: var(--gold-10); color: var(--gold); }
+.sound-toggle {
+  background: transparent; border: none; outline: none; cursor: none;
+  display: flex; align-items: center; gap: .5rem;
+  color: var(--muted); font-family: var(--sans);
+  transition: color .3s;
+}
+.sound-toggle:hover { color: var(--gold); }
+.st-lbl { font-size: .55rem; font-weight: 500; letter-spacing: .15em; text-transform: uppercase; }
+.st-bars { display: flex; gap: 2px; align-items: flex-end; height: 10px; }
+.st-bar { width: 2px; background: currentColor; height: 3px; transition: height .2s; }
+.sound-toggle.is-active .st-lbl { color: var(--gold); }
+.sound-toggle.is-active .st-bar:nth-child(1) { animation: eq 1s ease-in-out infinite alternate; }
+.sound-toggle.is-active .st-bar:nth-child(2) { animation: eq 1.2s ease-in-out infinite alternate-reverse; }
+.sound-toggle.is-active .st-bar:nth-child(3) { animation: eq 0.8s ease-in-out infinite alternate; }
+@keyframes eq { 0% { height: 3px; } 100% { height: 10px; } }
 @media (max-width: 900px) { .nav-center { display: none; } }
 
 /* ----------------------------------------------------------------
