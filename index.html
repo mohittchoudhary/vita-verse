@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VitaVerse — Health, Reimagined.</title>
+    <meta name="description" content="The world's first AI-powered luxury wellness wearable. Recovery. Sleep. Stress. Performance — redefined.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+
+    <!-- PRELOADER -->
+    <div id="preloader">
+        <div class="pl-inner">
+            <div class="pl-brand">VitaVerse</div>
+            <div class="pl-progress-wrap"><div class="pl-bar"></div></div>
+            <div class="pl-sub">Initializing Experience</div>
+        </div>
+    </div>
+
+    <!-- Custom cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- Persistent 3D canvas (fixed, full screen) -->
+    <canvas id="watch-canvas"></canvas>
+
+    <!-- Mouse glow (light-theme adapted) -->
+    <div class="mouse-glow" id="mouseGlow"></div>
+
+    <!-- NAV -->
+    <nav class="nav" id="nav">
+        <a href="#" class="nav-logo">VitaVerse</a>
+        <div class="nav-center">
+            <a href="#performance" class="nav-link">Performance</a>
+            <a href="#intelligence" class="nav-link">Intelligence</a>
+            <a href="#design" class="nav-link">Design</a>
+            <a href="#ecosystem" class="nav-link">Ecosystem</a>
+        </div>
+        <a href="#cta" class="nav-cta magnetic">Early Access</a>
+    </nav>
+
+    <!-- SCROLL WRAPPER -->
+    <div id="scroll-wrap">
+
+        <!-- =============================================
+             SECTION 1 — HERO
+             Watch: centered, gold spotlight, slow rotate
+        ============================================== -->
+        <section class="scene" id="scene-hero" data-scene="hero">
+            <div class="scene-bg scene-bg--hero">
+                <img src="assets/hero-watch.png" alt="" class="scene-bg__img scene-bg__img--watch" aria-hidden="true">
+                <div class="scene-bg__grad"></div>
+            </div>
+            <div class="scene-content scene-content--center">
+                <p class="eyebrow fade-up">The Future of Wellness Technology</p>
+                <h1 class="hero-title" data-split>Health,<br><em>Reimagined.</em></h1>
+                <p class="hero-sub fade-up">The world's first AI-powered luxury wellness wearable.<br>Recovery. Sleep. Stress. Performance. All in one.</p>
+                <div class="hero-actions fade-up">
+                    <a href="#performance" class="btn-primary magnetic"><span>Discover VitaVerse</span><div class="btn-fill"></div></a>
+                    <a href="#scene-problem" class="btn-ghost magnetic"><span>Our Story</span></a>
+                </div>
+            </div>
+            <div class="scroll-cue">
+                <div class="scroll-cue__line"></div>
+                <span>Scroll</span>
+            </div>
+        </section>
+
+        <!-- =============================================
+             SECTION 2 — PROBLEM
+             Watch: left, darker, red pulse
+        ============================================== -->
+        <section class="scene scene--right" id="scene-problem" data-scene="problem1">
+            <div class="scene-bg scene-bg--problem">
+                <div class="scene-bg__geo"></div>
+            </div>
+            <div class="scene-content scene-content--right">
+                <span class="scene-label fade-up">01 — The Problem</span>
+                <div class="stat-giant fade-up" data-count="30" data-suffix="%">0%</div>
+                <h2 class="scene-title" data-split>Fitness trackers<br>became<br>forgettable.</h2>
+                <p class="scene-body fade-up">Nearly a third of wearable owners abandon their devices within six months. They're ugly. Clinical. They don't fit into your life — they interrupt it.</p>
+            </div>
+        </section>
+
+        <section class="scene scene--left" id="scene-problem2" data-scene="problem2">
+            <div class="scene-bg scene-bg--problem2">
+                <div class="scene-bg__geo2"></div>
+            </div>
+            <div class="scene-content scene-content--left">
+                <div class="stat-giant fade-up" data-count="78" data-suffix="%">0%</div>
+                <h2 class="scene-title" data-split>Your health data<br>exists. Nobody<br>understands it.</h2>
+                <p class="scene-body fade-up">78.4% of wearable owners want to share health data with doctors. Only 26.5% actually do. The gap between data and action is dangerously wide.</p>
+            </div>
+        </section>
+
+        <section class="scene scene--right" id="scene-problem3" data-scene="problem3">
+            <div class="scene-content scene-content--right">
+                <div class="stat-giant fade-up" data-count="90" data-suffix="%">0%</div>
+                <h2 class="scene-title" data-split>Your heartbeat funds<br>someone else's<br>profit.</h2>
+                <p class="scene-body fade-up">Nine out of ten wearable companies harvest your intimate biometric data. Most monetize it without meaningful consent. Your body should never be a product.</p>
+            </div>
+        </section>
+
+        <!-- =============================================
+             SECTION 3 — PRODUCT REVEAL
+             Watch: right, dramatic zoom, metallic glow
+        ============================================== -->
+        <section class="scene" id="scene-reveal" data-scene="reveal1">
+            <div class="scene-bg scene-bg--reveal">
+                <img src="assets/watch-detail.png" alt="" class="scene-bg__img scene-bg__img--reveal" aria-hidden="true">
+            </div>
+            <div class="scene-content scene-content--center">
+                <span class="scene-label fade-up">The Answer</span>
+                <h2 class="scene-title scene-title--mega" data-split>Introducing<br>VitaVerse</h2>
+                <p class="scene-body scene-body--center fade-up">Where luxury craftsmanship meets artificial intelligence. So elegant you'll never want to take it off. So intelligent it understands your body better than you do.</p>
+            </div>
+        </section>
+
+        <!-- Pillars row -->
+        <section class="scene scene--pillars" id="scene-pillars" data-scene="reveal2">
+            <div class="scene-content scene-content--full">
+                <div class="pillars-grid">
+                    <div class="pillar-card fade-up" data-delay="0">
+                        <span class="pillar-n">01</span>
+                        <h3>Stylish Smart Jewellery</h3>
+                        <p>Titanium-grade craftsmanship. Fashion-forward. Biometric sensors beneath luxury surfaces.</p>
+                    </div>
+                    <div class="pillar-card fade-up" data-delay="80">
+                        <span class="pillar-n">02</span>
+                        <h3>AI Health Intelligence</h3>
+                        <p>Predictive analytics that learn your body's unique language. Sleep, recovery, stress decoded.</p>
+                    </div>
+                    <div class="pillar-card fade-up" data-delay="160">
+                        <span class="pillar-n">03</span>
+                        <h3>Doctor & Wellness Access</h3>
+                        <p>Seamless telehealth integration. Your physician sees what your wearable sees — live.</p>
+                    </div>
+                    <div class="pillar-card fade-up" data-delay="240">
+                        <span class="pillar-n">04</span>
+                        <h3>Privacy-First Architecture</h3>
+                        <p>End-to-end encrypted. Zero data sales. Your biometrics belong exclusively to you.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =============================================
+             SECTION 4 — INTELLIGENCE
+             Watch: vertical rotate, holographic data orbit
+        ============================================== -->
+        <section class="scene" id="intelligence" data-scene="intel1">
+            <div class="scene-bg scene-bg--intel">
+                <div class="scene-bg__lines"></div>
+            </div>
+            <div class="scene-content scene-content--center">
+                <span class="scene-label fade-up">Intelligence Layer</span>
+                <h2 class="scene-title scene-title--mega" data-split>Your Body Speaks.<br>VitaVerse Listens.</h2>
+                <p class="scene-body scene-body--center fade-up">VitaVerse AI doesn't just collect data — it understands context. Sleep quality correlates with yesterday's workout. Heart rate variability mirrors this morning's stress. Recovery predicts tomorrow's readiness.</p>
+            </div>
+        </section>
+
+        <section class="scene scene--cards" id="scene-ai" data-scene="intel2">
+            <div class="scene-content scene-content--full">
+                <div class="ai-grid">
+                    <div class="ai-card fade-up" data-delay="0"><span>01</span><h4>Predictive Analytics</h4><p>Detect health shifts 48 hours before symptoms surface. Your body whispers before it screams.</p></div>
+                    <div class="ai-card fade-up" data-delay="80"><span>02</span><h4>Sleep Architecture</h4><p>Deep sleep, REM cycles, respiratory rate — decoded nightly into an actionable sleep score.</p></div>
+                    <div class="ai-card fade-up" data-delay="160"><span>03</span><h4>Doctor-Ready Reports</h4><p>Clinical-grade summaries auto-generated. Share comprehensive biometric history with one tap.</p></div>
+                    <div class="ai-card fade-up" data-delay="240"><span>04</span><h4>Adaptive Learning</h4><p>The AI calibrates to your unique biology. The more you wear it, the smarter it becomes.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =============================================
+             SECTION 5 — PERFORMANCE
+             Watch: close to camera, HR animation
+        ============================================== -->
+        <section class="scene" id="performance" data-scene="performance">
+            <div class="scene-bg scene-bg--perf">
+                <img src="assets/hero-product.png" alt="" class="scene-bg__img scene-bg__img--perf" aria-hidden="true">
+                <div class="scene-bg__overlay"></div>
+            </div>
+            <div class="scene-content scene-content--split">
+                <div class="split-text">
+                    <span class="scene-label fade-up">Human Performance</span>
+                    <h2 class="scene-title" data-split>The Future<br>of Your Body.</h2>
+                    <p class="scene-body fade-up">VitaVerse decodes the complex language your body speaks every second — recovery state, sleep architecture, autonomic stress, cardiovascular strain. Elite athlete metrics, now for everyone.</p>
+                </div>
+                <div class="split-visual">
+                    <div class="hud-panel fade-up">
+                        <div class="hud-metric"><span class="hud-val" data-count="96">0</span><span class="hud-lbl">Recovery Score</span></div>
+                        <div class="hud-metric"><span class="hud-val" data-count="7.8" data-float="true">0</span><span class="hud-lbl">Sleep Hours</span></div>
+                        <div class="hud-metric"><span class="hud-val" data-count="42">0</span><span class="hud-lbl">HRV Index</span></div>
+                        <div class="hud-metric"><span class="hud-val" data-count="62">0</span><span class="hud-lbl">Resting HR</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =============================================
+             SECTION 6 — DESIGN / FASHION
+             Watch: straps rotate, jewellery lighting
+        ============================================== -->
+        <section class="scene" id="design" data-scene="design1">
+            <div class="scene-content scene-content--center">
+                <span class="scene-label fade-up">Craftsmanship</span>
+                <h2 class="scene-title scene-title--mega" data-split>Designed Like<br>Luxury Jewellery.</h2>
+                <p class="scene-body scene-body--center fade-up">Precision-engineered from aerospace-grade titanium, finished with 18k gold accents. Four interchangeable expressions — boardroom, workout, evening, weekend.</p>
+            </div>
+        </section>
+
+        <section class="scene scene--bands" id="scene-bands" data-scene="design2">
+            <div class="scene-content scene-content--full">
+                <div class="bands-grid">
+                    <div class="band-card fade-up" data-delay="0">
+                        <div class="band-vis band-vis--1">
+                            <div class="band-inner"></div>
+                            <div class="band-shine"></div>
+                        </div>
+                        <h4>Titanium Link</h4><p>Aerospace-grade. 48g ultra-light.</p>
+                    </div>
+                    <div class="band-card fade-up" data-delay="80">
+                        <div class="band-vis band-vis--2">
+                            <div class="band-inner"></div>
+                            <div class="band-shine"></div>
+                        </div>
+                        <h4>Heritage Leather</h4><p>Italian full-grain. Hand-stitched.</p>
+                    </div>
+                    <div class="band-card fade-up" data-delay="160">
+                        <div class="band-vis band-vis--3">
+                            <div class="band-inner"></div>
+                            <div class="band-shine"></div>
+                        </div>
+                        <h4>Jewellery Mode</h4><p>Gold vermeil. Detachable pendant.</p>
+                    </div>
+                    <div class="band-card fade-up" data-delay="240">
+                        <div class="band-vis band-vis--4">
+                            <div class="band-inner"></div>
+                            <div class="band-shine"></div>
+                        </div>
+                        <h4>Sport Silicone</h4><p>Medical-grade. Hypoallergenic.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =============================================
+             SECTION 7 — ECOSYSTEM
+             Watch: left side, data nodes float
+        ============================================== -->
+        <section class="scene" id="ecosystem" data-scene="ecosystem">
+            <div class="scene-content scene-content--split">
+                <div class="split-text">
+                    <span class="scene-label fade-up">The Ecosystem</span>
+                    <h2 class="scene-title" data-split>Your Personal<br>Wellness Army.</h2>
+                    <p class="scene-body fade-up">VitaVerse connects you to verified doctors, nutritionists, trainers, and wellness experts — all synchronized with your real-time biometric data.</p>
+                    <ul class="eco-list">
+                        <li class="fade-up" data-delay="0"><span>01</span><div><h4>Doctor Booking</h4><p>Instant telehealth with biometric context pre-loaded.</p></div></li>
+                        <li class="fade-up" data-delay="60"><span>02</span><div><h4>Nutrition Intelligence</h4><p>AI-matched dieticians. Personalized meal architecture.</p></div></li>
+                        <li class="fade-up" data-delay="120"><span>03</span><div><h4>Fitness Coaching</h4><p>On-demand trainers synced to your recovery state.</p></div></li>
+                        <li class="fade-up" data-delay="180"><span>04</span><div><h4>Live Sync</h4><p>Real-time streaming: wearable → app → doctor.</p></div></li>
+                    </ul>
+                </div>
+                <div class="split-visual">
+                    <div class="app-frame fade-up">
+                        <img src="assets/app-mockup.png" alt="VitaVerse App" class="app-img">
+                        <div class="app-glow"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =============================================
+             SECTION 8 — PRIVACY
+             Watch: encrypted particle shield
+        ============================================== -->
+        <section class="scene" id="scene-privacy" data-scene="privacy">
+            <div class="scene-bg scene-bg--privacy">
+                <canvas id="priv-canvas"></canvas>
+            </div>
+            <div class="scene-content scene-content--center">
+                <span class="scene-label fade-up">Trust Architecture</span>
+                <h2 class="scene-title scene-title--mega" data-split>Your Data.<br>Your Rules.</h2>
+                <p class="scene-body scene-body--center fade-up">Military-grade encryption. Zero third-party access. 24-hour offline storage. Your biometrics stay yours — always.</p>
+                <div class="priv-grid fade-up">
+                    <div class="priv-item"><div class="priv-dot"></div><p>24h Offline Storage</p></div>
+                    <div class="priv-item"><div class="priv-dot"></div><p>Bluetooth Auto-Sync</p></div>
+                    <div class="priv-item"><div class="priv-dot"></div><p>Military Encryption</p></div>
+                    <div class="priv-item"><div class="priv-dot"></div><p>Zero Data Sales</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =============================================
+             SECTION 9 — FINAL CTA
+             Watch: centered majestic, gold aura
+        ============================================== -->
+        <section class="scene scene--cta" id="cta" data-scene="cta">
+            <div class="cta-aura" id="ctaAura"></div>
+            <div class="scene-content scene-content--center">
+                <h2 class="cta-title" data-split>Luxury Wellness<br>Starts Here.</h2>
+                <p class="scene-body scene-body--center fade-up">Join the waitlist for early access to the future of human performance technology. Limited founding member spots available.</p>
+                <div class="cta-actions fade-up">
+                    <a href="#" class="btn-primary btn-primary--lg magnetic"><span>Join Early Access</span><div class="btn-fill"></div></a>
+                    <a href="#" class="btn-ghost btn-ghost--dark magnetic"><span>Watch the Film</span></a>
+                </div>
+            </div>
+        </section>
+
+    </div><!-- /#scroll-wrap -->
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand"><span>VitaVerse</span><p>Health, Reimagined.</p></div>
+            <div class="footer-links"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Contact</a></div>
+            <div class="footer-social"><a href="#" aria-label="Instagram">IG</a><a href="#" aria-label="X">X</a><a href="#" aria-label="LinkedIn">LI</a></div>
+        </div>
+        <div class="footer-copy"><p>&copy; 2026 VitaVerse Technologies. All rights reserved.</p></div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
